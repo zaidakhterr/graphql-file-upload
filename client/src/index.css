@@ -25,3 +25,38 @@ body {
 .app h1 {
   margin-bottom: 50px;
 }
+
+.app p {
+  margin-top: 20px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+}
+
+input[type="file"]::before {
+  content: "Select a file";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  display: block;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  text-align: center;
+  border-radius: 3px;
+  padding: 8px;
+  width: 100%;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+input[type="file"]:hover::before {
+  border-color: black;
+}

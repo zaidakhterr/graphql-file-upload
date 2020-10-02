@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { gql, useMutation } from "@apollo/client";
 
@@ -11,7 +11,7 @@ const UPLOAD_FILE = gql`
 `;
 
 function App() {
-  const [uploadFile] = useMutation(UPLOAD_FILE);
+  const [uploadFile, { data, error }] = useMutation(UPLOAD_FILE);
 
   function onChange({
     target: {
@@ -28,7 +28,10 @@ function App() {
   return (
     <div className="app">
       <h1>Upload File</h1>
+
       <input type="file" required onChange={onChange} />
+      {data && <p>File Uploaded Susscefully ✅</p>}
+      {error && <p>File Upload Failed 💔</p>}
     </div>
   );
 }
