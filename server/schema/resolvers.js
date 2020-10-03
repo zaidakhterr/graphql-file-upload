@@ -11,7 +11,7 @@ const resolvers = {
 
       const fileStream = createReadStream();
 
-      fileStream.pipe(fs.createWriteStream(`./uploadedFiles/${Date.now().toString()}-${filename}`));
+      fileStream.pipe(fs.createWriteStream(`./public/images/${Date.now().toString()}-${filename}`));
 
       return file;
     },

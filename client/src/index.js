@@ -7,9 +7,9 @@ import "./index.css";
 import App from "./App";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000",
+  uri: "http://localhost:4000/graphql",
   cache: new InMemoryCache(),
-  link: createUploadLink({ uri: "http://localhost:4000" }),
+  link: createUploadLink({ uri: "http://localhost:4000/graphql" }),
 });
 
 ReactDOM.render(
